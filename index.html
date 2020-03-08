@@ -4,11 +4,23 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css">
         <script type="x-shader/x-vertex" id="vertex-shader">
-            your vertex shader!!
+            attribute vec3 position;
+            void main() {
+                gl_Position = vec4(position, 1.0 );
+            }
         </script>
 
         <script type="x-shader/x-vertex" id="fragment-shader">
-            your fragment shader!!
+            #ifdef GL_ES	
+			precision mediump float;
+			#endif
+
+			uniform float time;
+			uniform vec2 resolution;
+
+			void main() {
+			  gl_FragColor = vec4(gl_FragPos.xyz, 1.0);
+			}
         </script>
 
         <script src="./glut.js"></script>
