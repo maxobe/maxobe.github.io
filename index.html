@@ -17,9 +17,19 @@
 
 			uniform float time;
 			uniform vec2 resolution;
-
+  			bool close_to(float a, float b, float margin) {
+                if(a < b+margin && a > b-margin) { 
+                    return true;
+                }
+                return false;
+            }
 			void main() {
-			  gl_FragColor = vec4(gl_FragCoord.xy/resolution*cos(time), 1.0, 1.0);
+ 			vec2 pos = gl_FragCoord/resolution;
+  			if(close_to(pow(pos.x, 2), pos.y, 1.0)) {
+    		gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+ 			} else {
+   			gl_FragCOLor = vec4(0.0, 0.0, 0.0, 1.0);
+ 			}
 			}
         </script>
 
