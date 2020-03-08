@@ -4,6 +4,7 @@
 }
 
 body {
+    font-family: 'retro';
     margin: 0;
     overflow: hidden;
     background: #1a1d23;
@@ -13,7 +14,6 @@ body {
 
 .center {
     font-size: 80px;
-    font-family: retro;
     position: absolute;
     top: 30%;
     left: 50%;
