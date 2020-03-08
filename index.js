@@ -7,6 +7,7 @@ function main() {
     var startTime = new Date().getTime();
     // Initialize the GL context
     var gl = Glut.getGL(canvas);
+    gl.program = Glut.getProgram(
         gl,
         "vertex-shader",
         "fragment-shader"
